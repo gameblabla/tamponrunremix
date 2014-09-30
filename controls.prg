@@ -213,8 +213,7 @@ END
 
 
 /*
-What's after here was done by PixJuegos
-and is not covered by our license.
+What's after here was done by PixJuegos.
 */
 
 function salir_android();
