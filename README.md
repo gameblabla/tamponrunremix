@@ -14,3 +14,6 @@ I'm working on a OUYA version as well and (i hope) it will be available soon.
 
 Source code is released under the Apache License 2.0
 See LICENSE file
+You need Pixplantilla by PixJuegos to compile for Android.
+If you want to compile with BennuGD alone, get the following files from Pixplantilla:
+controles.pr-, savepath.pr-, resolucioname.pr-.
