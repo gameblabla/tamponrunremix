@@ -1,16 +1,11 @@
 Tampon Run Remix
 ================
+I'm no longer working on it because the makers of the original game (Andy & sophie)
+decided that copyrights were more important than feminism or spreading the word about it 
+and  they sent me a DMCA notice.
 
-Tampon Run remade for Android devices with some improvements.
-The original HTML5 game by Andy & Sophie was released with no license so i have
-decided to completely reprogram it in BennuGD.
-Because they already made an HTM5 version , 
-i have decided to do it for Android devices instead.
-
-It's available on the Google Play , Amazon Appstore and AndroidPIT.
- https://play.google.com/store/apps/details?id=com.gameblabla.tamponrunr
-
-I'm working on a OUYA version as well and (i hope) it will be available soon.
+The problem is that i used some non-free assets but the code (made in BennuGD , unlike the real game coded in javascript)
+itself is still free as i have used no code from their game.        
 
 Source code is released under the Apache License 2.0
 See LICENSE file
