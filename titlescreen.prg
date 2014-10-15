@@ -30,6 +30,8 @@ BEGIN
 	title_graph(); // Put the background
 	flag();
 	
+	play_song(song_game_2,-1);
+	
 	Controls();
 	
 	LOOP
@@ -49,12 +51,12 @@ BEGIN
 		end
 	
 		if (save.langage == 0)
-			write(0,160,212,4,"Made by Gameblabla & inspired by Tampon Run ");
-			write(0,160,223,4,"GFX - Jesus Latra (Changes were made)");
+			write(0,160,212,4,"Copyright 2014 Gameblabla");
+			write(0,160,223,4,"Sound: Jesus Latra, SLiVeR (with changes)");
 			write(0,160,233,4,"License : tinyurl.com/ot594pq");
 		else
-			write(0,160,212,4,"Fait par Gameblabla & inspire par Tampon Run ");
-			write(0,160,223,4,"GFX - Jesus Latra (Changes were made)");
+			write(0,160,212,4,"Copyright 2014 Gameblabla");
+			write(0,160,223,4,"Sound: Jesus Latra, SLiVeR (avec changement)");
 			write(0,160,233,4,"License : tinyurl.com/ot594pq");
 		end
 	
@@ -84,7 +86,9 @@ BEGIN
 				end
 			elseif ((touch_state == 1 || b1_state == 1) )
 				wait_pad = 0;
-				story();
+				stop_song();
+				play_song(song_game,-1);
+				gameplay();
 			end
 		
 		end
