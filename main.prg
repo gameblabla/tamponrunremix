@@ -17,15 +17,13 @@ specific language governing permissions and limitations
 under the License.
 */
 
-/*
-Rename it to 'plantilla.prg' if you are using it with PixPlantilla.
-Without modifications , it needs the following files from PixPlantilla (BennuGD).
-controles.pr-, savepath.pr-, resolucioname.pr-.
-*/
 
+program tampon;
 
-program tamponrunr;
-
+// Módulos comunes de BennuGD
+#IFDEF DEBUG
+	import "mod_debug";
+#ENDIF
 import "mod_dir";
 import "mod_draw";
 import "mod_grproc";
@@ -66,7 +64,7 @@ global
 	string lang_string;
 	//utilizadas por lenguaje y savepath
 	string savegamedir;
-	string developerpath="/opentampon";
+	string developerpath="/.gameblabla/tampon";
 	struct ops;
 		test=0;
 	end
@@ -121,6 +119,7 @@ global
 	got_wav,hit_wav,jump_wav,gameover_wav,throw_wav;
 	fpg1_fr, fpg2_fr;
 	title_graph,game_graph;
+	song_game_2, song_game_3;
 	
 begin
 
@@ -140,28 +139,28 @@ begin
 	
 	fpg1 = load_fpg ("titlescreen.fpg") ;
 	fpg2 = load_fpg ("game.fpg") ;
-	
-	fpg1_fr = load_fpg ("titlescreen_fr.fpg") ;
 	fpg2_fr = load_fpg ("game_fr.fpg") ;
 	
+	title_graph = fpg1;
+			
 	if (save.langage == 0)
-		title_graph = fpg1;
 		game_graph = fpg2;
 	else
-		title_graph = fpg1_fr;
 		game_graph = fpg2_fr;
 	end
 	
 	font = load_fnt("font.fpg");
 	font_titlescreen = load_fnt("font_text.fpg");
 	
-	song_game = load_song("beethoven.ogg");	
+	song_game = load_song("game.ogg");	
+	song_game_2 = load_song("dirty.ogg");	
+	song_game_3 = load_song("result.ogg");	
 	
-    	got_wav = load_wav("got.wav");
-    	hit_wav = load_wav("hit.wav");
+	
+    got_wav = load_wav("got.wav");
+    hit_wav = load_wav("hit.wav");
 	jump_wav = load_wav("jump.wav");
-	//throw_wav = load_wav("throw.wav");
-	 gameover_wav = load_wav("gameover.wav");
+    gameover_wav = load_wav("gameover.wav");
 	
 	Load("Savefile",save);
 	
@@ -175,7 +174,6 @@ END
 
 include "titlescreen.prg"
 include "controls.prg"
-include "story.prg"
 include "game.prg"
 
 include "controles.pr-";
