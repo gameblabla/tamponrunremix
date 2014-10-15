@@ -1,11 +1,10 @@
-(Open)Tampon Run
-==========
-An open source clone of Tampon Run programmed in BennuGD.
-I have also released free assets released under the Creative Commons Unported 3.0, Copyright 2014 Gameblabla.
-Link to license here : https://creativecommons.org/licenses/by/3.0/legalcode
-And the assets can be found here : https://gameblabla.olympe.in/other/tampon_run_android_assetssrc.zip
-
-
+(Open)Tampon Run <br>
+================ <br>
+An open source clone of Tampon Run programmed in BennuGD. <br>
+I have also released free assets released under the Creative Commons Unported 3.0, Copyright 2014 Gameblabla. <br>
+Link to license here : https://creativecommons.org/licenses/by/3.0/legalcode <br>
+And the assets can be found here : https://gameblabla.olympe.in/other/tampon_run_android_assetssrc.zip <br>
+<br><br>
 Source code is released under the Apache License 2.0 <br>
 See LICENSE file  <br> <br>
 You need Pixplantilla by PixJuegos to compile for Android.<br>
