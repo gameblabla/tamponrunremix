@@ -66,7 +66,7 @@ global
 	string lang_string;
 	//utilizadas por lenguaje y savepath
 	string savegamedir;
-	string developerpath="/.gameblabla/tampon";
+	string developerpath="/opentampon";
 	struct ops;
 		test=0;
 	end
@@ -157,11 +157,11 @@ begin
 	
 	song_game = load_song("beethoven.ogg");	
 	
-    got_wav = load_wav("got.wav");
-    hit_wav = load_wav("hit.wav");
+    	got_wav = load_wav("got.wav");
+    	hit_wav = load_wav("hit.wav");
 	jump_wav = load_wav("jump.wav");
 	//throw_wav = load_wav("throw.wav");
-    gameover_wav = load_wav("gameover.wav");
+	 gameover_wav = load_wav("gameover.wav");
 	
 	Load("Savefile",save);
 	
