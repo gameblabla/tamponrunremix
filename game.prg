@@ -74,7 +74,7 @@ BEGIN
 	end
 	
 	save.score = 0;
-	tampon = 64;
+	tampon = 70;
 	tampon_time = 0;
 	fire_b = 0; 
 	jump_b = 0;
@@ -209,11 +209,15 @@ BEGIN
 
 	let_me_alone();
 	
+	stop_song();
+	
 	fade_off();
 	for (i=0;i<15;i++)
 		frame;
 	end
 	fade_on();	
+	
+	play_song(song_game_3,-1);
 			
 	delete_text(ALL_TEXT);
 	clear_screen();
@@ -243,7 +247,7 @@ BEGIN
 	b2_time = 0;
 	
 	// Play Game over GFX
-	play_wav(gameover_wav,0);
+	//play_wav(gameover_wav,0);
 	
 	// Save Structure save (see plantilla.prg) to a file named Savefile
 	Save("Savefile",save);
@@ -261,9 +265,9 @@ BEGIN
 				gameplay();
 			elseif ( (mmy2 > 132 and mmy2 < 190) and  (mmx2 > 88 and mmx2 < 230) )
 				if (save.langage == 0)
-				exec(_P_NOWAIT, "https://twitter.com/intent/tweet?text= I scored "+save.score+" pts in Tampon Run Remix ! #tamponrunremix", 0, 0);
+				exec(_P_NOWAIT, "https://twitter.com/intent/tweet?text= I scored "+save.score+" pts in Tampon Run Android ! #tamponrun", 0, 0);
 				else
-				exec(_P_NOWAIT, "https://twitter.com/intent/tweet?text= J'ai eu "+save.score+" pts dans Tampon Run Remix ! #tamponrunremix", 0, 0);
+				exec(_P_NOWAIT, "https://twitter.com/intent/tweet?text= J'ai eu "+save.score+" pts dans Tampon Run Android ! #tamponrun", 0, 0);
 				end
 				touch_state = 2;
 			end
@@ -813,7 +817,7 @@ BEGIN
 	graph = 23;
 	x = 320;
 	y = 213;
-	z = 4;
+	z = -2;
 	
 	LOOP
 		lamp_x = x;
