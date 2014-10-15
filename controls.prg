@@ -212,9 +212,6 @@ begin
 END
 
 
-/*
-What's after here was done by PixJuegos.
-*/
 
 function salir_android();
 begin
