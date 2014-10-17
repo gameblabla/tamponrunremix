@@ -139,40 +139,60 @@ begin
 		if (touch_state == 0) // Si il n'y a aucune pression
 			B1_PRESSED = 0;
 		
-			if ((multi_info(0, "ACTIVE") > 0))
-				B1_PRESSED = 1;
-				touch_state = 1;
-				xm = mmx;
-				ym = mmy;
-			elseif ((multi_info(1, "ACTIVE") > 0))
-				B1_PRESSED = 1;
-				touch_state = 1;
-				xm = mmx2;
-				ym = mmy2;
-			elseif ((multi_info(2, "ACTIVE") > 0))
-				B1_PRESSED = 1;
-				touch_state = 1;
-				xm = mmx2;
-				ym = mmy2;
+			if(os_id==1003)
+				if ((multi_info(0, "ACTIVE") > 0))
+					B1_PRESSED = 1;
+					touch_state = 1;
+					xm = mmx;
+					ym = mmy;
+				elseif ((multi_info(1, "ACTIVE") > 0))
+					B1_PRESSED = 1;
+					touch_state = 1;
+					xm = mmx2;
+					ym = mmy2;
+				elseif ((multi_info(2, "ACTIVE") > 0))
+					B1_PRESSED = 1;
+					touch_state = 1;
+					xm = mmx2;
+					ym = mmy2;
+				end
+			else
+				if (mouse.left)
+					B1_PRESSED = 1;
+					touch_state = 1;
+					xm = mmx;
+					ym = mmy;
+				end
 			end
 			
 		elseif (touch_state == 1) // Si l'utilisateur vient d'apputer
 		
-			if ((multi_info(0, "ACTIVE") > 0))
-				touch_time++;
-				xm = mmx;
-				ym = mmy;
-			elseif ((multi_info(1, "ACTIVE") > 0))
-				touch_time++;	
-				xm = mmx2;
-				ym = mmy2;
-			elseif ((multi_info(2, "ACTIVE") > 0))
-				touch_time++;	
-				xm = mmx2;
-				ym = mmy2;	
+			if(os_id==1003)
+				if ((multi_info(0, "ACTIVE") > 0))
+					touch_time++;
+					xm = mmx;
+					ym = mmy;
+				elseif ((multi_info(1, "ACTIVE") > 0))
+					touch_time++;	
+					xm = mmx2;
+					ym = mmy2;
+				elseif ((multi_info(2, "ACTIVE") > 0))
+					touch_time++;	
+					xm = mmx2;
+					ym = mmy2;
+				else
+					touch_time = 0;
+					touch_state = 0;
+				end
 			else
-				touch_time = 0;
-				touch_state = 0;
+				if (mouse.left)
+					touch_time++;
+					xm = mmx;
+					ym = mmy;
+				else
+					touch_time = 0;
+					touch_state = 0;
+				end
 			end
 			
 			if (touch_time > 3)
@@ -181,20 +201,32 @@ begin
 			end
 		elseif (touch_state == 2) // Si il presse
 		
-			if ((multi_info(0, "ACTIVE") > 0))
-				xm = mmx;
-				ym = mmy;
-			elseif ((multi_info(1, "ACTIVE") > 0))
-				xm = mmx2;
-				ym = mmy2;
-			elseif ((multi_info(2, "ACTIVE") > 0))
-				xm = mmx2;
-				ym = mmy2;
+			if(os_id==1003)
+				if ((multi_info(0, "ACTIVE") > 0))
+					xm = mmx;
+					ym = mmy;
+				elseif ((multi_info(1, "ACTIVE") > 0))
+					xm = mmx2;
+					ym = mmy2;	
+				elseif ((multi_info(2, "ACTIVE") > 0))
+					xm = mmx2;
+					ym = mmy2;
+				else
+					touch_time = 0;
+					touch_state = 3;
+					B1_PRESSED = 0;
+				end
 			else
-				touch_time = 0;
-				touch_state = 3;
-				B1_PRESSED = 0;
+				if (mouse.left)
+					touch_time++;
+					xm = mmx;
+					ym = mmy;
+				else
+					touch_time = 0;
+					touch_state = 0;
+				end
 			end
+			
 		elseif (touch_state == 3) // Si il vient de lacher
 				touch_time++;
 				if (touch_time > 5)
