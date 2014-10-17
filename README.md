@@ -1,4 +1,4 @@
-(Open)Tampon Run <br>
+OpenTampon <br>
 ================ <br>
 An open source clone of Tampon Run programmed in BennuGD. <br>
 I have also released free assets released under the Creative Commons Unported 3.0, Copyright 2014 Gameblabla. <br>
