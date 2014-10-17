@@ -25,6 +25,7 @@ i , random;
 tampon_r; 
 BEGIN
 	let_me_alone();
+	stop_song();
 	
 	fade_off();
 	for (i=0;i<15;i++)
@@ -34,6 +35,8 @@ BEGIN
 
 	delete_text(ALL_TEXT);
 	clear_screen();
+	
+	play_song(song_game,-1);
 	
 	// Draw Background
 	fond_grey(); 
@@ -74,12 +77,13 @@ BEGIN
 	end
 	
 	save.score = 0;
-	tampon = 70;
+	tampon = 65;
 	tampon_time = 0;
 	fire_b = 0; 
 	jump_b = 0;
 	
 	touch_state = 2;
+	touch_time = -30;
 	b1_state = 2;
 	b2_state = 2;
 	b1_time =  0;
@@ -260,9 +264,22 @@ BEGIN
 	
 		// For touch screens
 		if (touch_state == 1)
-			if ( (mmy2 > 60 and mmy2 < 130) and (mmx2 > 88 and mmx2 < 230) )
+		
+			if ( (mmy > 60 and mmy < 130) and (mmx > 88 and mmx < 230) )
 				touch_state = 2;
 				gameplay();
+			elseif ( (mmy2 > 60 and mmy2 < 130) and (mmx2 > 88 and mmx2 < 230) )
+				touch_state = 2;
+				gameplay();
+			end
+			
+			if ( (mmy > 132 and mmy < 190) and  (mmx > 88 and mmx < 230) )
+				if (save.langage == 0)
+				exec(_P_NOWAIT, "https://twitter.com/intent/tweet?text= I scored "+save.score+" pts in Tampon Run Android ! #tamponrun", 0, 0);
+				else
+				exec(_P_NOWAIT, "https://twitter.com/intent/tweet?text= J'ai eu "+save.score+" pts dans Tampon Run Android ! #tamponrun", 0, 0);
+				end
+				touch_state = 2;
 			elseif ( (mmy2 > 132 and mmy2 < 190) and  (mmx2 > 88 and mmx2 < 230) )
 				if (save.langage == 0)
 				exec(_P_NOWAIT, "https://twitter.com/intent/tweet?text= I scored "+save.score+" pts in Tampon Run Android ! #tamponrun", 0, 0);
@@ -271,7 +288,11 @@ BEGIN
 				end
 				touch_state = 2;
 			end
+				
 		end
+		
+
+		
 			
 		// For pads and keyboard	
 		if (p[0].botones[2] || key(_up))
