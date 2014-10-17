@@ -157,10 +157,10 @@ begin
 	song_game_3 = load_song("result.ogg");	
 	
 	
-    got_wav = load_wav("got.wav");
-    hit_wav = load_wav("hit.wav");
+    	got_wav = load_wav("got.wav");
+	hit_wav = load_wav("hit.wav");
 	jump_wav = load_wav("jump.wav");
-    gameover_wav = load_wav("gameover.wav");
+	gameover_wav = load_wav("gameover.wav");
 	
 	Load("Savefile",save);
 	
