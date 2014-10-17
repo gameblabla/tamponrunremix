@@ -68,7 +68,7 @@ BEGIN
 		
 		if (wait_pad > 15)
 		
-			if ((touch_state == 1) and ((mmx > 230 and mmx < 310 and mmy > 40 and mmy < 96) || (mmx2 > 230 and mmx2 < 310 and mmy2 > 40 and mmy2 < 96) ) )
+			if ((touch_state == 1) and ((mmx > 230 and mmx < 310 and mmy > 30 and mmy < 96) || (mmx2 > 230 and mmx2 < 310 and mmy2 > 40 and mmy2 < 96) ) )
 				touch_state = 2;
 				
 				if (save.langage == 0)
@@ -86,8 +86,6 @@ BEGIN
 				end
 			elseif ((touch_state == 1 || b1_state == 1) )
 				wait_pad = 0;
-				stop_song();
-				play_song(song_game,-1);
 				gameplay();
 			end
 		
@@ -109,7 +107,7 @@ BEGIN
 	file = game_graph;
 	graph = 36;
 	x = 160+108;
-	y = 120-48;
+	y = 120-38;
 	z = -1;
 	
 	LOOP
